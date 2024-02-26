@@ -53,8 +53,6 @@ void convertTemp(char unit, float temp){
         }
 }
 
-
-
 int main(){
 
     convertTemp(' ', 0);
