@@ -22,7 +22,7 @@ int main(){
 
     double i{-40};
     while(i < 101){
-        cout << std::setw(9) << i << std::setw(9) << FtoC(i) <<  "  |" << std::setw(9) << i << CtoF(i) << endl;
-        i+5;
+        cout << std::setw(9) << i << std::setw(9) << FtoC(i) <<  "  |" << std::setw(9) << i << std::setw(9) << CtoF(i) << endl;
+        i = i+5;
     }
 }
