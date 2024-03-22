@@ -12,7 +12,7 @@ int main() {
       }
     }
     if (checkPrime == true) {
-      cout << i << endl;
+      cout << i << ", ";
     }
   }
 }

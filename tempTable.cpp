@@ -21,7 +21,7 @@ int main(){
 
 
     double i{-40};
-    while(i < 101){
+    while(i < 456){
         cout << std::setw(9) << i << std::setw(9) << FtoC(i) <<  "  |" << std::setw(9) << i << std::setw(9) << CtoF(i) << endl;
         i = i+5;
     }
