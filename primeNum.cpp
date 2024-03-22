@@ -3,17 +3,18 @@ using namespace std;
 
 int main() {
 
-  for (int i{1}; i < 10000; i++) {
-    bool checkPrime = true;
-    for (int j{2}; j < i; j++) {
-      if (i % j == 0) {
-        checkPrime = false;
-        break;
-      }
+    cout << "Prime Numbers:" << endl;
+    for (int i = 1; i < 10000; i++) {
+        bool checkPrime = true;
+        for (int j = 2; j < i; j++) {
+            if (i % j == 0) {
+                checkPrime = false;
+                break;
+            }
+        }
+        if (checkPrime == true) {
+            cout << i << ", ";
+        }
     }
-    if (checkPrime == true) {
-      cout << i << ", ";
-    }
-  }
+    return 0;
 }
-
