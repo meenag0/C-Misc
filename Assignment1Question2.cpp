@@ -1,8 +1,8 @@
 
-// TempConversion.cpp
+// Assignment1Question2.cpp
 
 /* 
- Title: TempConversion.cpp
+ Title: Assignment1Question2.cpp
  Description: A simple program to convert temperatures between Fahrenheit and Celsius based on user input
  Date: March 22, 2024
  Author: Meena Gopalakrishnan
@@ -17,13 +17,28 @@
  	This program allows users to convert temperatures between Fahrenheit and Celsius.
  	It demonstrates basic input/output operations, conditional statements, and function calls.
 
- Compile: g++ -o TempConversion TempConversion.cpp
- Execution: ./TempConversion or ./TempConversion.exe
+ Compile: g++ -o Assignment1Question2 Assignment1Question2.cpp
+ Execution: ./Assignment1Question2 or ./Assignment1Question2.exe
  
  Notes:
  	- The program expects the user to input a temperature value followed by a unit (F for Fahrenheit, C for Celsius).
  	- It then converts the temperature to the other unit and displays the result.
  	- The program continues to prompt the user for conversions until they choose to exit.
+    - The program handles uppercase and lowercase inputs for unit selection.
+
+Classes:
+    None
+
+Variables:
+    - temperature: a double variable to store the temperature value entered by the user.
+    - unit: a char variable to store the unit entered by the user (F for Fahrenheit, C for Celsius).
+    - choice: a char variable to store the user's choice whether to perform another conversion.
+
+Functions:
+    - fahrenheitToCelsius(double fahrenheit): a function that takes a temperature value in Fahrenheit and returns its equivalent value in Celsius.
+    - celsiusToFahrenheit(double celsius): a function that takes a temperature value in Celsius and returns its equivalent value in Fahrenheit.
+
+
 */
 
 
@@ -35,20 +50,21 @@ Normal case:
     > Please enter your temperature: 32
     > Please enter the units (F/C): F
     A temperature of 32 degrees Fahrenheit is equivalent to 0 degrees Celsius.
-    Do you want another conversion (Y/N)? N
-    Thank you for playing.
+    > Do you want another conversion? (Y/N): y
+    > Please enter your temperature: 100
+    > Please enter the units (F/C): C
+    A temperature of 100 degrees Celsius is equivalent to 212 degrees Fahrenheit.
+    > Do you want another conversion? (Y/N): N
+    Thank you. Goodbye.
 
-Bad Data case 1 (Invalid unit)
+
+Bad Data case 1 (Invalid unit):
     > Please enter your temperature: 32
     > Please enter the units (F/C): K
-    Please enter a valid input.
-    Please enter your temperature: 32
-    > Please enter the units (F/C): F
-    A temperature of 32 degrees Fahrenheit is equivalent to 0 degrees Celsius.
-    Do you want another conversion (Y/N)? N
-    Thank you for playing.
+    Invalid inputs provided.
+    Thank you. Goodbye.
 
-Bad Data case 2 (Invalid temperature)
+Bad Data case 2 (Invalid temperature):
     > Please enter your temperature: abc
     Please enter the units (F/C): 
     Invalid inputs provided.
@@ -56,9 +72,8 @@ Bad Data case 2 (Invalid temperature)
 
     Discussion:
     - The program accepts temperatures in both Fahrenheit and Celsius.
-    - Invalid units result in a prompt to enter a valid input.
-    - Invalid temperature inputs are handled gracefully, but still produce a conversion.
-    - The program loops until the user chooses to exit.
+    - Invalid units and incalid temperatures result in exiting the code, and ending the program.
+    - The program loops until the user chooses to exit, or enters an invalid value.
 
 */
 

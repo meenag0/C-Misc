@@ -1,7 +1,7 @@
-// tempTable.cpp
+// Assignment1Question3.cpp
 
 /*
- Title: tempTable.cpp
+ Title: Assignment1Question3.cpp
  Description: Printing out temperature convertions from Farenheit to Celsius and vice versa using a properly formatted table for temperatures from -40 to 455 in increments of 5degrees.
  Date: March 22, 2024
  Author: Meena Gopalakrishnan
@@ -16,11 +16,9 @@ DOCUMENTATION
 Program Purpose:
     - This program converts temperatures between Celsius and Fahrenheit and prints a temperature conversion table.
 
-Compile:
-    - Command: g++ -o tempTable tempTable.cpp
+Compile: g++ -o Assignment1Question3 Assignment1Question3.cpp
 
-Execution:
-    - Command: ./tempTable or tempTable.exe
+Execution: ./Assignment1Question3 or Assignment1Question3.exe
 
 Notes: 
     - The program generates a temperature conversion table for temperatures ranging from -40°C to 455°C, with conversions every 5 degrees.

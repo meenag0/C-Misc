@@ -1,4 +1,4 @@
-// primeNum.cpp
+// Assignment1Question5.cpp
 
 /*
  Title: primeNum.cpp
@@ -17,10 +17,10 @@ Program Purpose:
     - This program generates prime numbers up to 10,000 and prints them.
 
 Compile:
-    - Command: g++ -o primeNum primeNum.cpp
+    - Command: g++ -o Assignment1Question5 Assignment1Question5.cpp
 
 Execution:
-    - Command: ./primeNum or ./primeNum.exe
+    - Command: ./Assignment1Question5 or ./Assignment1Question5.exe
 
 Notes: 
     - This program iterates through numbers from 1 to 9999 and checks each number's divisibility to determine if it is prime.

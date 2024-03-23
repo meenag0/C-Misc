@@ -1,8 +1,8 @@
 
-// multiplicationTable.cpp
+// Assignment1Question1.cpp
 
 /*
- Title: multiplicationTable.cpp
+ Title: Assignment1Question1.cpp
  Description: Printing a properly formatted multiplication table for 12.
  Date: March 22, 2024
  Author: Meena Gopalakrishnan
@@ -17,11 +17,9 @@ DOCUMENTATION
 Program Purpose:
     - This program generates a multiplication table up to 12x12 and prints it neatly formatted.
 
-Compile:
-    - Command: g++ -o multiplicationTable  multiplicationTable.cpp
+Compile: g++ -o Assignment1Question1  Assignment1Question1.cpp
 
-Execution:
-    - Command: ./multiplicationTable or ./multiplicationTable.exe
+Execution: ./Assignment1Question1 or ./Assignment1Question1.exe
 
 Notes: 
     - The program uses two functions: `digs` to calculate the number of digits in a number and `mult` to generate the multiplication table for a given number.

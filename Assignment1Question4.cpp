@@ -1,7 +1,7 @@
-// menu.cpp
+// Assignment1Question4.cpp
 
 /*
- Title: menu.cpp
+ Title: Assignment1Question4.cpp
  Description: Help menu that allows for selection of term's list number, and then displays the selected term's definition.
  Date: March 22, 2024
  Author: Meena Gopalakrishnan
@@ -17,8 +17,8 @@
     - Simple C++ help menu, providing information on various control flow constructs such as if, switch, for, while, and do-while loops.
  	- Demonstrate proper understanding of basic looping structure and switch statements.
 
- Compile (assuming Cygwin is running): g++ -o menu menu.cpp
- Execution (assuming Cygwin is running): ./menu or ./menu.exe
+ Compile (assuming Cygwin is running): g++ -o Assignment1Question4 Assignment1Question4.cpp
+ Execution (assuming Cygwin is running): ./Assignment1Question4 or ./Assignment1Question4.exe
  
  Notes:     
     - Select menu item by entering the list number of selected term. 
