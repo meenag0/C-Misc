@@ -260,7 +260,6 @@ Test 8:
 */
 
 
-
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -335,20 +334,36 @@ public:
     }
 };
 
+// Function to find the minimum of two float values
+float min(float a, float b) {
+  if (a < b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+
+// Function to find the maximum of two float values
+float max(float a, float b) {
+  if (a > b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+
 // Class representing a circle, derived from Shape
 class Circle : public Shape {
+private:
     Point center;
     float radius;
 
 public:
-    // Constructors
+    // Default constructor
     Circle() : center(Point()), radius(0) {}
 
+    // Constructor with arguments
     Circle(Point center, float radius) : center(center), radius(radius) {
-        if (radius <= 0) {
-            cout << "Invalid circle! Radius must be greater than 0. \n" << endl;
-            return;
-        }
     }
 
     // Calculate area of the circle
@@ -371,98 +386,147 @@ public:
 
     // Check if the circle is a valid shape
     bool isValidShape() const override {
-        return radius > 0;
+        return radius >= 0;
     }
 
     // Display information about the circle
     void display() const override {
+    if (isValidShape()) {
         cout << "Circle" << endl;
         cout << "Center: ";
         center.show();
         cout << endl;
         cout << "Radius: " << radius << endl;
-        Shape::display();
+        Shape::display(); // Call Shape::display() only if the shape is valid
+    } else {
+        cout << "Invalid circle! Radius must be greater than or equal to 0." << endl;
+    }
     }
 };
 
 // Class representing a rectangle, derived from Shape
 class Rectangle : public Shape {
 private:
-    Point topLeft, topRight, bottomRight, bottomLeft;
-    bool valid;
+    Point points[4];
 
 public:
-    // Constructors
-    Rectangle() : topLeft(Point()), topRight(Point()), bottomRight(Point()), bottomLeft(Point()), valid(false) {}
+    // Default constructor
+    Rectangle() {}
 
-    Rectangle(Point tl, Point tr, Point br, Point bl) : topLeft(tl), topRight(tr), bottomRight(br), bottomLeft(bl), valid(true) {
-        if (fabs(tr.getX() - tl.getX()) != fabs(br.getX() - bl.getX()) ||
-            fabs(tl.getY() - bl.getY()) != fabs(tr.getY() - br.getY())) {
-            cout << "Not a rectangle! Opposite sides are not equal." << endl;
-            valid = false;
-            return; // Exit constructor if error occurs
-        }
+    // Constructor with arguments
+    Rectangle(Point p1, Point p2, Point p3, Point p4) {
+        points[0] = p1;
+        points[1] = p2;
+        points[2] = p3;
+        points[3] = p4;
     }
 
     // Check if the rectangle is a square
     bool isSquare() const {
-        float width = topRight.getX() - topLeft.getX();
-        float height = topLeft.getY() - bottomLeft.getY();
+        float width = points[1].getX() - points[0].getX();
+        float height = points[0].getY() - points[3].getY();
         return width == height;
     }
 
     // Calculate area of the rectangle
     float calculateArea() const override {
-        if (!valid)
-            return 0;
-        return fabs(bottomRight.getX() - topLeft.getX()) * fabs(topLeft.getY() - bottomRight.getY());
+        float width = points[1].getX() - points[0].getX();
+        float height = points[0].getY() - points[3].getY();
+        return fabs(width * height);
     }
 
     // Calculate circumference of the rectangle
     float calculateCircumference() const override {
-        if (!valid)
-            return 0;
-        return 2 * (fabs(bottomRight.getX() - topLeft.getX()) + fabs(topLeft.getY() - bottomRight.getY()));
+        float width = points[1].getX() - points[0].getX();
+        float height = points[0].getY() - points[3].getY();
+        return 2 * (fabs(width) + fabs(height));
     }
 
     // Calculate bounding box of the rectangle
-    void boundingBox(Point& tl, Point& tr, Point& br, Point& bl) const override {
-        if (!valid)
-            return;
-        tl = topLeft;
-        tr = topRight;
-        br = bottomRight;
-        bl = bottomLeft;
-    }
+    void boundingBox(Point& topLeft, Point& topRight, Point& bottomRight, Point& bottomLeft) const override {
+        float minX = min(min(points[0].getX(), points[1].getX()), min(points[2].getX(), points[3].getX()));
+        float maxX = max(max(points[0].getX(), points[1].getX()), max(points[2].getX(), points[3].getX()));
+        float minY = min(min(points[0].getY(), points[1].getY()), min(points[2].getY(), points[3].getY()));
+        float maxY = max(max(points[0].getY(), points[1].getY()), max(points[2].getY(), points[3].getY()));
 
-    // Check if the rectangle is a valid shape
-    bool isValidShape() const override {
-        return valid;
+        topLeft = Point(minX, maxY);
+        topRight = Point(maxX, maxY);
+        bottomRight = Point(maxX, minY);
+        bottomLeft = Point(minX, minY);
     }
+bool isValidShape() const override {
+    // Find the bottom-left and top-right points
+    Point bottomLeft = points[0];
+    Point topRight = points[0];
+    for (int i = 1; i < 4; ++i) {
+        if (points[i].getX() < bottomLeft.getX() || (points[i].getX() == bottomLeft.getX() && points[i].getY() < bottomLeft.getY())) {
+            bottomLeft = points[i];
+        }
+        if (points[i].getX() > topRight.getX() || (points[i].getX() == topRight.getX() && points[i].getY() > topRight.getY())) {
+            topRight = points[i];
+        }
+    }
+    // Find the other two points
+    Point topLeft, bottomRight;
+    for (int i = 0; i < 4; ++i) {
+        if (!(points[i].getX() == bottomLeft.getX() && points[i].getY() == bottomLeft.getY()) &&
+            !(points[i].getX() == topRight.getX() && points[i].getY() == topRight.getY())) {
+            if (points[i].getX() == bottomLeft.getX()) {
+                topLeft = points[i];
+            } else {
+                bottomRight = points[i];
+            }
+        }
+    }
+    // Calculate the lengths of the sides
+    float side1_length = sqrt(pow(topRight.getX() - bottomRight.getX(), 2) + pow(topRight.getY() - bottomRight.getY(), 2));
+    float side2_length = sqrt(pow(topLeft.getX() - topRight.getX(), 2) + pow(topLeft.getY() - topRight.getY(), 2));
+    float side3_length = sqrt(pow(bottomLeft.getX() - topLeft.getX(), 2) + pow(bottomLeft.getY() - topLeft.getY(), 2));
+    float side4_length = sqrt(pow(bottomRight.getX() - bottomLeft.getX(), 2) + pow(bottomRight.getY() - bottomLeft.getY(), 2));
+
+    // Check if the rectangle has equal sides
+    bool equalWidths = (side1_length == side3_length) && (side2_length == side4_length);
+
+    // Check if the rectangle has opposite sides perpendicular to each other
+    float dot_product1 = (topRight.getX() - bottomRight.getX()) * (topLeft.getX() - topRight.getX()) +
+                         (topRight.getY() - bottomRight.getY()) * (topLeft.getY() - topRight.getY());
+    float dot_product2 = (topLeft.getX() - topRight.getX()) * (bottomLeft.getX() - topLeft.getX()) +
+                         (topLeft.getY() - topRight.getY()) * (bottomLeft.getY() - topLeft.getY());
+    float dot_product3 = (bottomLeft.getX() - topLeft.getX()) * (bottomRight.getX() - bottomLeft.getX()) +
+                         (bottomLeft.getY() - topLeft.getY()) * (bottomRight.getY() - bottomLeft.getY());
+    float dot_product4 = (bottomRight.getX() - bottomLeft.getX()) * (topRight.getX() - bottomRight.getX()) +
+                         (bottomRight.getY() - bottomLeft.getY()) * (topRight.getY() - bottomRight.getY());
+
+    bool orthogonalSides = (fabs(dot_product1) < 1e-6) &&
+                           (fabs(dot_product2) < 1e-6) &&
+                           (fabs(dot_product3) < 1e-6) &&
+                           (fabs(dot_product4) < 1e-6);
+
+    return equalWidths && orthogonalSides;
+}
+
+
 
     // Display information about the rectangle
     void display() const override {
         if (isValidShape()) {
             cout << "Rectangle" << endl;
-            cout << "Top-Left: ";
-            topLeft.show();
-            cout << endl;
-            cout << "Top-Right: ";
-            topRight.show();
-            cout << endl;
-            cout << "Bottom-Right: ";
-            bottomRight.show();
-            cout << endl;
-            cout << "Bottom-Left: ";
-            bottomLeft.show();
-            cout << endl;
+            for (int i = 0; i < 4; ++i) {
+                cout << "Point " << i + 1 << ": ";
+                points[i].show();
+                cout << endl;
+            }
             if (isSquare()) {
                 cout << "This is a square." << endl;
             }
             Shape::display(); // Call Shape::display() only if the shape is valid
+        } else {
+            cout << "Invalid rectangle! Opposite sides are not equal or not parallel." << endl;
         }
     }
 };
+
+
 
 // Class representing a triangle, derived from Shape
 class Triangle : public Shape {
@@ -470,24 +534,30 @@ private:
     Point p1, p2, p3;
 
 public:
-    // Constructors
+    // Default constructor
     Triangle() : p1(Point()), p2(Point()), p3(Point()) {}
 
-    Triangle(Point p1, Point p2, Point p3) : p1(p1), p2(p2), p3(p3) {
+    // Constructor with arguments
+    Triangle(Point p1, Point p2, Point p3) : p1(p1), p2(p2), p3(p3) {}
+
+
+    bool isValidShape() const override {
         // Check for sides with zero length
         if ((p1.getX() == p2.getX() && p1.getY() == p2.getY()) ||
             (p2.getX() == p3.getX() && p2.getY() == p3.getY()) ||
             (p1.getX() == p3.getX() && p1.getY() == p3.getY())) {
-            cout << "Invalid triangle! Cannot create a triangle with a side of zero length. \n" << endl;
-            return; // Exit constructor if error occurs
+            cout << "Invalid triangle! Cannot create a triangle with a side of zero length." << endl;
+            return false;
         }
 
         // Check for colinear points
         float crossProduct = (p2.getX() - p1.getX()) * (p3.getY() - p1.getY()) - (p3.getX() - p1.getX()) * (p2.getY() - p1.getY());
         if (fabs(crossProduct) < 1e-6) {
             cout << "Invalid triangle! Cannot create a triangle with colinear points." << endl;
-            return; // Exit constructor if error occurs
+            return false;
         }
+
+        return true;
     }
 
     // Calculate area of the triangle
@@ -510,33 +580,30 @@ public:
     // Calculate bounding box of the triangle
     void boundingBox(Point& tl, Point& tr, Point& br, Point& bl) const override {
         float minX = min(min(p1.getX(), p2.getX()), p3.getX());
-        float minY = min(min(p1.getY(), p2.getY()), p3.getY());
-        float maxX = max(max(p1.getX(), p2.getX()), p3.getX());
-        float maxY = max(max(p1.getY(), p2.getY()), p3.getY());
+        float minY = min(min(p1.getY(), p2.getY()), min(p3.getY(), minY));
+        float maxX = max(max(p1.getX(), p2.getX()), max(p3.getX(), minX));
+        float maxY = max(max(p1.getY(), p2.getY()), max(p3.getY(), minY));
         tl = Point(minX, minY);
         tr = Point(maxX, minY);
         br = Point(maxX, maxY);
         bl = Point(minX, maxY);
     }
 
-    // Check if the triangle is a valid shape
-    bool isValidShape() const override {
-        return true;
-    }
-
     // Display information about the triangle
     void display() const override {
-        cout << "Triangle" << endl;
-        cout << "Point 1: ";
-        p1.show();
-        cout << endl;
-        cout << "Point 2: ";
-        p2.show();
-        cout << endl;
-        cout << "Point 3: ";
-        p3.show();
-        cout << endl;
-        Shape::display();
+       if (isValidShape()) {
+            cout << "Triangle" << endl;
+            cout << "Point 1: ";
+            p1.show();
+            cout << endl;
+            cout << "Point 2: ";
+            p2.show();
+            cout << endl;
+            cout << "Point 3: ";
+            p3.show();
+            cout << endl;
+            Shape::display();
+        }
     }
 };
 
@@ -544,53 +611,59 @@ public:
 int main() {
     cout << "Circle: " << endl;
     // Valid circle
-    Circle c(Point(0, 0), 5);
-    c.display();
-    cout << endl;
+    Circle c1(Point(0, 0), 5);
+    c1.display();
     cout << endl;
 
     cout << "Invalid Circle: " << endl;
     // Invalid circle with negative radius (error handling demonstrated)
-    Circle invalid_c(Point(1, 1), -2);
+    Circle c2(Point(1, 1), -2);
+    c2.display();
     cout << endl;
 
-    cout << "Invalid Rectangle 1: " << endl;
+    cout << "Valid Rectangle: " << endl;
     // Valid rectangle
-    Rectangle r(Point(-2, 7), Point(3, 2), Point(3, -3), Point(-2, -3));
-    r.display();
-    cout << endl;
-    cout << endl;
-
-    cout << "Invalid Rectangle 2: " << endl;
-    // Invalid rectangle with top-left point having larger x or smaller y than bottom-right (error handling demonstrated)
-    Rectangle invalid_r(Point(0, 2), Point(0, 2), Point(0, -3), Point(0, -3));
+    Rectangle r1(Point(-1, -1), Point(-1, 3), Point(6, -1), Point(6, 3));
+    r1.display();
     cout << endl;
 
-    cout << "Rectangle: " << endl;
-    // Invalid rectangle with top-left point having larger x or smaller y than bottom-right (error handling demonstrated)
-    Rectangle valid_r(Point(0, 0), Point(4, 0), Point(4, -2), Point(0, -2));
-    cout << endl;
-    cout << endl;
-
-
-    cout << "Square: " << endl;
+    cout << "Square (Rectangle): " << endl;
     // Square rectangle (special case)
     Rectangle square_r(Point(0, 0), Point(2, 0), Point(2, -2), Point(0, -2));
     square_r.display();
     cout << endl;
+
+
+    cout << "Invalid Rectangle 1 (not equal): " << endl;
+    // Invalid rectangle with random points (error handling demonstrated)
+    Rectangle inv_r1(Point(0, 0), Point(4, 0), Point(1, 2), Point(3, 3));
+    inv_r1.display();
     cout << endl;
 
-    cout << "Triangle: " << endl;
+    // Invalid rectangle with random points (error handling demonstrated)
+    Rectangle inv_r2(Point(-1, 3), Point(0, 0), Point(4, 0), Point(3, 3));
+    inv_r2.display();
+    cout << endl;
+
+
+    cout << "Valid Triangle: " << endl;
     // Valid triangle
     Triangle t(Point(0, 0), Point(0, 3), Point(4, 0));
     t.display();
     cout << endl;
-    cout << endl;
 
-    cout << "Invalid Triangle: " << endl;
+    cout << "Invalid Triangle 1: " << endl;
     // Invalid triangle with zero-length side (error handling demonstrated)
     Triangle invalid_t1(Point(0, 0), Point(0, 0), Point(1, 0));
+    invalid_t1.display();
     cout << endl;
+
+    cout << "Invalid Triangle 2: " << endl;
+    // Invalid triangle with zero-length side (error handling demonstrated)
+    Triangle invalid_t2(Point(-1, 3), Point(-1, 5), Point(-1, 8));
+    invalid_t2.display();
+    cout << endl;
+
 
     return 0;
 }
