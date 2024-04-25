@@ -19,7 +19,7 @@ Program Purpose:
 
 Compile: g++ -o Assignment1Question1  Assignment1Question1.cpp
 
-Execution: ./Assignment1Question1 or ./Assignment1Question1.exe
+Execution: ./Assignment1Question1 
 
 Notes: 
     - The program uses two functions: `digs` to calculate the number of digits in a number and `mult` to generate the multiplication table for a given number.

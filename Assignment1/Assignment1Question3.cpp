@@ -18,7 +18,7 @@ Program Purpose:
 
 Compile: g++ -o Assignment1Question3 Assignment1Question3.cpp
 
-Execution: ./Assignment1Question3 or Assignment1Question3.exe
+Execution: ./Assignment1Question3 
 
 Notes: 
     - The program generates a temperature conversion table for temperatures ranging from -40°C to 455°C, with conversions every 5 degrees.
@@ -50,6 +50,10 @@ Variables:
     - i: double
       Purpose: Used as a loop variable to iterate through temperatures from -40°C to 455°C.
 
+Discussion:
+    - No input validation included as no inputs are rettrieved. 
+    - Generates a table with temperature conversions between Farenheit and Celsius and vice versa from -40 to 455.
+
 */
 
 /*
@@ -60,18 +64,15 @@ Normal case:
     - Program is executed and prints prime number from 1 to 10000:
 
     Expected Output:
-        Temperature    |     Temperature 
-         (degrees)     |      (degrees) 
-        F        C     |     C        F    
-       -40       -40   |    -40     -40   
-       -35       -37   |    -35     -31   
-       -30       -34   |    -30     -22   
-       -25       -31   |    -25     -13   
-       -20       -28   |    -20      -4   
-       -15       -26   |    -15       5   
-       -10       -23   |    -10      14   
-        -5       -21   |     -5      23   
-         0       -18   |      0      32   
+    
+      Temperature      |      Temperature
+       (degrees)       |       (degrees)
+     F           C     |       C           F
+  -40.000     -40.000  |    -40.000     -40.000
+  -35.000     -37.222  |    -35.000     -31.000
+  -30.000     -34.444  |    -30.000     -22.000
+  -25.000     -31.667  |    -25.000     -13.000
+  -20.000     -28.889  |    -20.000      -4.000 
         continued...
 
 */

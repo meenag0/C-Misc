@@ -16,11 +16,9 @@ DOCUMENTATION
 Program Purpose:
     - This program generates prime numbers up to 10,000 and prints them.
 
-Compile:
-    - Command: g++ -o Assignment1Question5 Assignment1Question5.cpp
+Compile: g++ -o Assignment1Question5 Assignment1Question5.cpp
 
-Execution:
-    - Command: ./Assignment1Question5 or ./Assignment1Question5.exe
+Execution: ./Assignment1Question5 
 
 Notes: 
     - This program iterates through numbers from 1 to 9999 and checks each number's divisibility to determine if it is prime.

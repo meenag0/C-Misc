@@ -17,14 +17,13 @@
     - Simple C++ help menu, providing information on various control flow constructs such as if, switch, for, while, and do-while loops.
  	- Demonstrate proper understanding of basic looping structure and switch statements.
 
- Compile (assuming Cygwin is running): g++ -o Assignment1Question4 Assignment1Question4.cpp
- Execution (assuming Cygwin is running): ./Assignment1Question4 or ./Assignment1Question4.exe
+ Compile: g++ -o Assignment1Question4 Assignment1Question4.cpp
+ Execution: ./Assignment1Question4 
  
  Notes:     
     - Select menu item by entering the list number of selected term. 
     - Terminate the program by entering 'x' at the prompt.
 
- 
  Classes: 
     - none
 

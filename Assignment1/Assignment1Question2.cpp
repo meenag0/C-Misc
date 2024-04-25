@@ -18,12 +18,12 @@
  	It demonstrates basic input/output operations, conditional statements, and function calls.
 
  Compile: g++ -o Assignment1Question2 Assignment1Question2.cpp
- Execution: ./Assignment1Question2 or ./Assignment1Question2.exe
+ Execution: ./Assignment1Question2 
  
  Notes:
  	- The program expects the user to input a temperature value followed by a unit (F for Fahrenheit, C for Celsius).
  	- It then converts the temperature to the other unit and displays the result.
- 	- The program continues to prompt the user for conversions until they choose to exit.
+ 	- The program continues to prompt the user for conversions until they choose to exit or provide invalid data.
     - The program handles uppercase and lowercase inputs for unit selection.
 
 Classes:
@@ -72,7 +72,7 @@ Bad Data case 2 (Invalid temperature):
 
     Discussion:
     - The program accepts temperatures in both Fahrenheit and Celsius.
-    - Invalid units and incalid temperatures result in exiting the code, and ending the program.
+    - Invalid units and invalid temperatures result in exiting the code, and ending the program.
     - The program loops until the user chooses to exit, or enters an invalid value.
 
 */
