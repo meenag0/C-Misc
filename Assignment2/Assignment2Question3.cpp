@@ -1,10 +1,10 @@
 
-// Assignment1Question3.cpp
+// Assignment2Question3.cpp
 
 /*
- Title: Assignment1Question1.cpp
+ Title: Assignment2Question3.cpp
  Description: A program to simulate an elevator moving between floors.
- Date: March 22, 2024
+ Date: April 18, 2024
  Author: Meena Gopalakrishnan
  Version: 1.0
  Copyright: 2024 Meena Gopalakrishnan
@@ -14,15 +14,14 @@
 DOCUMENTATION
 
 Program Purpose:
-    - This program generates a multiplication table up to 12x12 and prints it neatly formatted.
+    - The program simulates an elevator moving between floors in a building.
 
 Compile: g++ -o Assignment2Question3  Assignment2Question3.cpp
 
 Execution: ./Assignment2Question3
 
 Notes:
-    - The program simulates an elevator moving between floors in a building.
-    - It uses the Elevator class to represent the elevator.
+    - Program uses the Elevator class to represent the elevator.
     - The Elevator class has attributes currentFloor and totalFloors, and methods moveToFloor, finalize, and getCurrentFloor 
       to simulate elevator operations.
     - The program tests the Elevator class by simulating various scenarios of the elevator moving between floors.
@@ -147,16 +146,16 @@ public:
     }
 
     // Constructor with custom number of floors
-    Elevator(int floors) {
-        totalFloors = floors;
+    Elevator(int n) {
+        totalFloors = n;
         currentFloor = 1;
     }
 
     // Moves the elevator to the specified floor
-    void moveToFloor(int floor) {
-        if (floor >= 1 && floor <= totalFloors) {
-            cout << "Moving from floor " << currentFloor << " to floor " << floor << endl;
-            currentFloor = floor;
+    void moveToFloor(int n) {
+        if (n >= 1 && n <= totalFloors) {
+            cout << "Moving from floor " << currentFloor << " to floor " << n << endl;
+            currentFloor = n;
         } else {
             cout << "Invalid floor!" << endl;
         }
@@ -173,6 +172,7 @@ public:
         return currentFloor;
     }
 
+    // Termination: Instance is set to null
     ~Elevator() {
     }
 };

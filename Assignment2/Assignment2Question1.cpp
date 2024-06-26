@@ -3,7 +3,7 @@
 /*
  Title: Assignment2Question1.cpp
  Description: A program to create different animal objects and call their sound methods.
- Date: April 19, 2024
+ Date: April 9, 2024
  Author: Meena Gopalakrishnan
  Version: 1.0
  Copyright: 2024 Meena Gopalakrishnan
@@ -14,7 +14,7 @@
 DOCUMENTATION
 
 Program Purpose:
-    - This program demonstrates the use of inheritance and polymorphism by creating different animal objects and calling their sound methods.
+    - This program demonstrates the use of inheritance by creating different animal objects and calling their sound methods.
 
 Compile: 
     g++ -o Assignment2Question1 Assignment2Question1.cpp
@@ -31,7 +31,7 @@ Notes:
 Classes:
     - Animal: 
         - Base class for different animals.
-        - Contains a virtual function sound(), which is overridden by child classes.
+        - Contains a function sound(), which is overridden by child classes.
 
     - Pig: 
         - Child class of Animal. 
@@ -39,7 +39,7 @@ Classes:
 
     - Sheep: 
         - Child class of Animal. 
-        - Implements the sound() method to produce a sheep's sound, "baa".
+        - Implements the sound() method to produce a sheep's sound, "baah".
 
     - Duck: 
         - Child class of Animal. 
@@ -54,7 +54,7 @@ Classes:
 
 Functions:
     - Animal::sound(): 
-        - Virtual function to produce animal sound. 
+        - Function to produce animal sound. 
         - Overridden by child classes.
 
     - AnimalTest():
@@ -79,13 +79,14 @@ TEST PLAN
 Normal case:
     - Enter animal type (pig, sheep, duck, cow): pig
     - Expected Output:
+        I am an animal.
         I am a pig.
         oink
 
 Bad Data case (Invalid animal type):
     - Enter animal type (pig, sheep, duck, cow): cat
     - Expected Output: 
-        Invalid animal type.
+        Invalid animal type. Please choose from options given.
 
 Discussion:
     - This program creates different animal objects based on user input and calls their sound methods.
@@ -104,7 +105,7 @@ public:
         std::cout << "I am an animal." << std::endl;
     }
 
-    // Virtual function to produce animal sound
+    // Function to produce animal sound
     virtual void sound() {
         std::cout << "An animal makes a sound based on the animal that it is." << std::endl;
     }
@@ -119,7 +120,7 @@ public:
     }
 
     // Override sound method to produce pig sound
-    void sound() override {
+    void sound() {
         std::cout << "oink" << std::endl;
     }
 };
@@ -133,7 +134,7 @@ public:
     }
 
     // Override sound method to produce sheep sound
-    void sound() override {
+    void sound() {
         std::cout << "baah" << std::endl;
     }
 };
@@ -147,7 +148,7 @@ public:
     }
 
     // Override sound method to produce duck sound
-    void sound() override {
+    void sound() {
         std::cout << "quack" << std::endl;
     }
 };
@@ -161,7 +162,7 @@ public:
     }
 
     // Override sound method to produce cow sound
-    void sound() override {
+    void sound() {
         std::cout << "moo" << std::endl;
     }
 };
@@ -178,7 +179,7 @@ public:
             animal->sound();
         } else {
             // If animal object creation failed, print error message
-            std::cout << "Invalid animal type." << std::endl;
+            std::cout << "Invalid animal type. Please choose from options given." << std::endl;
         }
     }
 
@@ -187,8 +188,8 @@ private:
     Animal* createAnimal(const std::string& type) {
         // Convert input to lowercase
         std::string lowercaseType = type;
-        for (char& c : lowercaseType) {
-            c = tolower(c);
+        for (int i = 0; i < lowercaseType.size(); ++i) {
+            lowercaseType[i] = tolower(lowercaseType[i]);
         }
 
         // Create animal object based on input

@@ -1,0 +1,16 @@
+Above Ground;You are in a lovely garden above ground.
+Rabbit Hole;You are falling down the rabbit hole.
+Rabbit's House;You are in the White Rabbit's house. It's quite cramped.
+Forest;You are in a mysterious forest. The Cheshire Cat might appear.
+Queen's Garden;You are in the Queen's garden, where roses are being painted red.
+Mad Tea Party;You are at the March Hare's house, where a perpetual tea party is hosted.
+Safe Area;You have reached the safe area. If you have collected all the necessary items, you win!
+Tea Party;You are at a whimsical tea party with the Mad Hatter and the March Hare.
+Maze;You are in a confusing maze. You might get lost here.
+Underground Lake;You are by an underground lake, its waters are eerily still.
+Dark Cave;You are in a dark cave. It's cold and damp.
+Tulgey Wood;You are in a dark and twisted forest. Strange creatures lurk in the shadows.
+Mushroom Valley;You find yourself in a colorful valley filled with enormous mushrooms of various shapes and sizes.
+Looking-Glass House;You're in a mirror-themed room where everything seems backwards and reversed.
+Croquet Ground;You've entered the Queen's famous croquet ground. Flamingos and hedgehogs are scattered about.
+ 

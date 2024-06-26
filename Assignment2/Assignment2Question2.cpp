@@ -3,7 +3,7 @@
 /*
  Title: Assignment2Question2.cpp
  Description: A program that defines a Book class with private attributes such as title, author, publisher, ISBN, year, and edition, with public getter and setter methods implemented to access and modify these attributes
- Date: April 22, 2024
+ Date: April 15, 2024
  Author: Meena Gopalakrishnan
  Version: 1.0
  Copyright: 2024 Meena Gopalakrishnan
@@ -235,15 +235,16 @@ int main() {
     library.push_back(Book("1984", "George Orwell", "Secker & Warburg", 9780451524935, 1949, 1.0));
 
     // Display information of all books in the library
-    for (const Book& book : library) {
-        cout << "Title: " << book.getTitle() << endl;
-        cout << "Author: " << book.getAuthor() << endl;
-        cout << "Publisher: " << book.getPublisher() << endl;
-        cout << "ISBN: " << book.getISBN() << endl;
-        cout << "Year: " << book.getYear() << endl;
-        cout << "Edition: " << book.getEdition() << endl;
-        cout << endl;
-    }
+for (int i = 0; i < library.size(); ++i) {
+    const Book& book = library[i];
+    cout << "Title: " << book.getTitle() << endl;
+    cout << "Author: " << book.getAuthor() << endl;
+    cout << "Publisher: " << book.getPublisher() << endl;
+    cout << "ISBN: " << book.getISBN() << endl;
+    cout << "Year: " << book.getYear() << endl;
+    cout << "Edition: " << book.getEdition() << endl;
+    cout << endl;
+}
 
     return 0;
 }

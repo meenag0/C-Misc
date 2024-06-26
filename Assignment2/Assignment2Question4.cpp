@@ -4,7 +4,7 @@
 /*
  Title: Assignment2Question4.cpp
  Description: A program to simulate the behavior of different rodents.
- Date: March 22, 2024
+ Date: April 21, 2024
  Author: Meena Gopalakrishnan
  Version: 1.0
  Copyright: 2024 Meena Gopalakrishnan
@@ -23,13 +23,13 @@ Execution: ./Assignment2Question4
 
 Notes:
     - The program defines a base class Rodent, and derived classes Mouse, Gerbil, Hamster, and GuineaPig.
-    - Each rodent class implements virtual functions to simulate eating and moving behaviors.
+    - Each rodent class implements functions to simulate eating and moving behaviors.
     - The program tests the behavior of each rodent by creating objects of each class and calling their respective functions.
 
 Classes:
     - Rodent:
         - Base class representing a generic rodent.
-        - Virtual functions: eat(), sleep(), groom(), move().
+        - Functions: eat(), sleep(), groom(), move().
 
     - Mouse:
         - Derived class from Rodent representing a Mouse.
@@ -166,23 +166,23 @@ using namespace std;
 // Rodent class
 class Rodent {
 public:
-    // Virtual function to simulate eating
-    virtual void eat() {
+    // Function to simulate eating
+    void eat() {
         cout << "Rodent eating" << endl;
     }
 
-    // Virtual function to simulate sleeping
-    virtual void sleep() {
+    // Function to simulate sleeping
+    void sleep() {
         cout << "Rodent sleeping" << endl;
     }
 
-    // Virtual function to simulate grooming
-    virtual void groom() {
+    // Function to simulate grooming
+    void groom() {
         cout << "Rodent grooming" << endl;
     }
 
-    // Virtual function to simulate moving
-    virtual void move() {
+    // Function to simulate moving
+    void move() {
         cout << "Rodent moving" << endl;
     }
 };
@@ -191,12 +191,12 @@ public:
 class Mouse : public Rodent {
 public:
     // Overrides the eat function for a Mouse
-    void eat() override {
+    void eat() {
         cout << "Mouse eating seeds" << endl;
     }
 
     // Overrides the move function for a Mouse
-    void move() override {
+    void move() {
         cout << "Mouse scurrying" << endl;
     }
 };
@@ -205,12 +205,12 @@ public:
 class Gerbil : public Rodent {
 public:
     // Overrides the eat function for a Gerbil
-    void eat() override {
+    void eat() {
         cout << "Gerbil is eating grains" << endl;
     }
 
     // Overrides the move function for a Gerbil
-    void move() override {
+    void move() {
         cout << "Gerbil is burrowing" << endl;
     }
 };
@@ -219,12 +219,12 @@ public:
 class Hamster : public Rodent {
 public:
     // Overrides the eat function for a Hamster
-    void eat() override {
+    void eat() {
         cout << "Hamster is eating pellets" << endl;
     }
 
     // Overrides the move function for a Hamster
-    void move() override {
+    void move() {
         cout << "Hamster is running on a wheel" << endl;
     }
 };
@@ -233,12 +233,12 @@ public:
 class GuineaPig : public Rodent {
 public:
     // Overrides the eat function for a Guinea Pig
-    void eat() override {
+    void eat() {
         cout << "Guinea Pig is eating grass" << endl;
     }
 
     // Overrides the move function for a Guinea Pig
-    void move() override {
+    void move() {
         cout << "Guinea Pig is running around" << endl;
     }
 };

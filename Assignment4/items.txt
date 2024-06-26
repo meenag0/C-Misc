@@ -1,0 +1,12 @@
+Rabbit Hole;Golden Key;A small, shiny golden key.
+Forest;Magic Potion;A bottle labeled 'Drink Me' that makes you grow or shrink.
+Forest;Hidden Mushroom;A hidden mushroom that the Cheshire Cat mentioned.
+Queen's Garden;Queen's Crown;The crown of the Queen of Hearts.
+Above Ground;Magic Wand;A wand that can cast spells.
+Rabbit Hole;Silver Key;A small, shiny silver key.
+Forest;Magic Berry;A berry that can heal you.
+Queen's Garden;Golden Apple;A magical apple that grants wishes.
+Mad Tea Party;Teapot;A teapot that pours endless tea.
+Rabbit's House;Pocket Watch;A watch belonging to the White Rabbit.
+Mad Tea Party;Sugar Cube;A magical sugar cube that makes you fly.
+Forest;Cheshire Cat's Smile;The enigmatic smile of the Cheshire Cat.
