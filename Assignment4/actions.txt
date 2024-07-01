@@ -1,0 +1,8 @@
+go;move,walk,run,travel
+take;grab,pick up,collect,get
+use;utilize,employ,apply
+look;examine,inspect,observe
+inventory;inv,items,possessions
+talk;speak,converse,chat
+solve;figure out,answer,resolve
+quit;exit,leave,end game

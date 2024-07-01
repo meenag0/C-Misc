@@ -1,16 +1,18 @@
-Above Ground;You are in a lovely garden above ground.
-Rabbit Hole;You are falling down the rabbit hole.
-Rabbit's House;You are in the White Rabbit's house. It's quite cramped.
-Forest;You are in a mysterious forest. The Cheshire Cat might appear.
-Queen's Garden;You are in the Queen's garden, where roses are being painted red.
-Mad Tea Party;You are at the March Hare's house, where a perpetual tea party is hosted.
-Safe Area;You have reached the safe area. If you have collected all the necessary items, you win!
-Tea Party;You are at a whimsical tea party with the Mad Hatter and the March Hare.
-Maze;You are in a confusing maze. You might get lost here.
-Underground Lake;You are by an underground lake, its waters are eerily still.
-Dark Cave;You are in a dark cave. It's cold and damp.
-Tulgey Wood;You are in a dark and twisted forest. Strange creatures lurk in the shadows.
-Mushroom Valley;You find yourself in a colorful valley filled with enormous mushrooms of various shapes and sizes.
-Looking-Glass House;You're in a mirror-themed room where everything seems backwards and reversed.
-Croquet Ground;You've entered the Queen's famous croquet ground. Flamingos and hedgehogs are scattered about.
- 
+Above Ground;You are in a lovely garden above ground;You find yourself in a charming and peaceful garden, full of vibrant flowers in full bloom. The air is filled with the sweet scent of blossoms, and you can hear birds singing melodiously. Sunlight filters through the leaves of tall trees, creating a dappled pattern on the ground. Butterflies flutter around, adding to the enchanting atmosphere.
+Rabbit Hole;You are falling down the rabbit hole;You are tumbling down a seemingly endless rabbit hole, surrounded by swirling colors and strange, floating objects. The sensation of falling is both exhilarating and disorienting. Occasionally, you catch glimpses of curious scenes and peculiar creatures as you plummet deeper into the unknown.
+Rabbit's House;You are in the White Rabbit's house. It's quite cramped;You are inside the White Rabbit's quaint and cluttered house. The space is small and filled with an assortment of curious items. Shelves are lined with mismatched teacups, old clocks, and peculiar trinkets. The ceiling is low, making the room feel even more cramped.
+Forest;You are in a mysterious forest. The Cheshire Cat might appear;You are standing in a mysterious forest, shrouded in an eerie, enchanting atmosphere. The trees are tall and ancient, their branches intertwining to form a dense canopy overhead. The forest floor is covered in a thick layer of leaves and undergrowth, muffling your footsteps.
+Queen's Garden;You are in the Queen's garden, where roses are being painted red;You find yourself in the Queen's magnificent garden, where the air is filled with the scent of roses. The garden is meticulously maintained, with perfectly trimmed hedges and neatly arranged flowerbeds. In one corner, you see gardeners hurriedly painting white roses red, trying to avoid the Queen's wrath.
+Mad Tea Party;You are at the March Hare's house, where a perpetual tea party is hosted;You are at the March Hare's house, where a never-ending tea party is taking place. The table is set with a chaotic assortment of teapots, cups, and plates, all in various states of disarray. The atmosphere is whimsical and slightly mad, with oddities and eccentricities at every turn.
+Safe Area;You have reached the safe area. If you have collected all the necessary items, you win!;You have arrived at the safe area, a place of calm and security amidst the chaos. It is a peaceful clearing with soft grass and a gentle, warm light. Here, you can take a moment to breathe and gather your thoughts.
+Tea Party;You are at a whimsical tea party with the Mad Hatter and the March Hare;You are at a whimsical tea party set in a delightful, slightly surreal garden. The table is laden with an eclectic mix of teapots, cakes, and odd contraptions. The atmosphere is lively and unpredictable, with nonsensical conversations and bizarre happenings unfolding around you.
+Maze;You are in a confusing maze. You might get lost here;You are in a bewildering maze, with high hedges towering over you and pathways that twist and turn unpredictably. The air is cool and filled with the rustling of leaves. As you navigate the labyrinthine passages, you must stay alert and sharp to avoid getting hopelessly lost.
+Underground Lake;You are by an underground lake, its waters are eerily still;You are standing by an underground lake, its waters eerily still and dark. The cavern is vast and silent, with the only sound being the occasional drip of water echoing through the space. Stalactites hang from the ceiling, and the air is cool and damp.
+Dark Cave;You are in a dark cave. It's cold and damp;You are in a dark, cold cave. The air is damp, and the walls are rough and uneven. Your footsteps echo as you move, and you can hear the faint sound of water dripping in the distance. The darkness is almost complete, save for a few faint glimmers of light reflecting off the wet surfaces.
+Tulgey Wood;You are in a dark and twisted forest. Strange creatures lurk in the shadows;You are in Tulgey Wood, a dark and twisted forest where strange creatures lurk in the shadows. The trees have gnarled branches that seem to reach out towards you, and the underbrush is thick and tangled. The atmosphere is ominous, and you feel a constant sense of being watched.
+Mushroom Valley;You find yourself in a colorful valley filled with enormous mushrooms of various shapes and sizes;You find yourself in a valley filled with enormous, colorful mushrooms of various shapes and sizes. The air is filled with a faint, earthy aroma, and the ground is soft and spongy. The mushrooms create a fantastical landscape, with vibrant hues and whimsical forms that seem almost otherworldly.
+Looking-Glass House;You're in a mirror-themed room where everything seems backwards and reversed;You are in a room where everything seems to be reversed and mirrored. The furniture and decor are familiar yet strangely distorted, as if seen through a looking-glass. Reflections and optical illusions abound, creating a disorienting and surreal environment where nothing is quite as it seems.
+Croquet Ground;You've entered the Queen's famous croquet ground. Flamingos and hedgehogs are scattered about;You have entered the Queen's croquet ground, a bizarre and whimsical space where flamingos are used as mallets and hedgehogs as balls. The grass is perfectly manicured, and the air is filled with the shouts and laughter of the Queen's court. The atmosphere is both playful and tense, as the game is played under the watchful eye of the Queen.
+Maze1;You are in a confusing maze;You enter a bewildering maze of twisty little passages, all alike.
+Maze2;You are in a confusing maze;The maze continues, with no clear way out.
+Maze3;You are in a confusing maze;The maze seems to go on forever.

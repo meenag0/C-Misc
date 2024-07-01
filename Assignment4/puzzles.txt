@@ -1,7 +1,7 @@
 Rabbit Hole;Golden Key Puzzle;I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?;map
 Forest;Magic Potion Puzzle;I'm not a bird, but I fly. I'm not a plane, but I soar. I don't have wings, but I go up. What am I?;bubble
 Forest;Hidden Mushroom Mystery;The more you take, the more you leave behind. What am I?;footsteps
-Queen's Garden;Queen's Crown Conundrum;What has keys, but no locks; space, but no room; you can enter, but not go in?;keyboard
+Queen's Garden;Queen's Crown Conundrum;What has keys, but no locks, space, but no room, and you can enter, but not go in?;keyboard
 Above Ground;Magic Wand Riddle;I'm light as a feather, yet the strongest person can't hold me for more than a minute. What am I?;breath
 Rabbit Hole;Silver Key Enigma;I have a head and a tail that will never meet. Having too many of me is always a treat. What am I?;coin
 Forest;Magic Berry Brainteaser;What gets wetter and wetter the more it dries?;towel

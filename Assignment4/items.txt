@@ -10,3 +10,5 @@ Mad Tea Party;Teapot;A teapot that pours endless tea.
 Rabbit's House;Pocket Watch;A watch belonging to the White Rabbit.
 Mad Tea Party;Sugar Cube;A magical sugar cube that makes you fly.
 Forest;Cheshire Cat's Smile;The enigmatic smile of the Cheshire Cat.
+Forest;rock;A small, throwable rock.
+Rabbit Hole;cake;A cake labeled 'EAT ME'.

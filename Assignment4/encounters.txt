@@ -1,0 +1,5 @@
+Thief;true;A sneaky thief tries to steal your items.;Golden Key
+Wise Duck;false;The wise colorful bird offers to guide you.;
+Snake;true;A hissing snake blocks your path.;
+Helpful Rabbit;false;A kind rabbit offers you a healing potion.;
+Goblin;true;A mischievous goblin challenges you.;Magic Potion
